@@ -16,11 +16,9 @@ This will download, wrap and install nimmonocypher in the standard Nimble packag
 
 __Usage__
 
-```nim
-import nimmonocypher/monocypher
+Module documentation can be found [here](https://nimgen.genotrance.com/nimmonocypher).
 
-
-```
+Refer to the `tests` directory for examples on how the library can be used.
 
 __Credits__
 
