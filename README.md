@@ -9,7 +9,7 @@ Nimmonocypher can be installed via [Nimble](https://github.com/nim-lang/nimble):
 ```
 > nimble install nimgen
 
-> nimble install https://github.com/genotrance/nimmonocypher
+> nimble install nimmonocypher
 ```
 
 This will download, wrap and install nimmonocypher in the standard Nimble package location, typically ~/.nimble. Once installed, it can be imported into any Nim program.
