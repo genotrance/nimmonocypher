@@ -7,8 +7,6 @@ __Installation__
 Nimmonocypher can be installed via [Nimble](https://github.com/nim-lang/nimble):
 
 ```
-> nimble install nimgen
-
 > nimble install nimmonocypher
 ```
 

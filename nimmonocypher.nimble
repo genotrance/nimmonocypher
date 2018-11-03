@@ -1,6 +1,6 @@
 # Package
 
-version       = "0.1.0"
+version       = "0.1.1"
 author        = "genotrance"
 description   = "monocypher wrapper for Nim"
 license       = "MIT"
@@ -11,17 +11,20 @@ skipDirs = @["tests"]
 
 requires "nimgen >= 0.4.0"
 
-import distros
+var
+  name = "nimmonocypher"
+  cmd = when defined(Windows): "cmd /c " else: ""
 
-var cmd = ""
-if detectOs(Windows):
-    cmd = "cmd /c "
+mkDir(name)
 
-task setup, "Download and generate":
-    exec cmd & "nimgen nimmonocypher.cfg"
+task setup, "Checkout and generate":
+  if gorgeEx(cmd & "nimgen").exitCode != 0:
+    withDir(".."):
+      exec "nimble install nimgen -y"
+  exec cmd & "nimgen " & name & ".cfg"
 
 before install:
-    setupTask()
+  setupTask()
 
-task test, "Test":
-    exec "nim c -r tests/testmono.nim"
+task test, "Run tests":
+  exec "nim c -r tests/t" & name & ".nim"
